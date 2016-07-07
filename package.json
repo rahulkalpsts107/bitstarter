@@ -1,0 +1,14 @@
+{
+  "name": "bitstarter",
+  "version": "1.0.0",
+  "description": "A bittorrent client for learning using https://github.com/allenkim67 tutorial!",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Rahul",
+  "license": "ISC",
+  "dependencies": {
+    "bencode": "0.10.0"
+  }
+}
