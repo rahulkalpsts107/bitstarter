@@ -21,14 +21,15 @@ function _getPeers (torrent, callback) {
     if (respType(response) === 'connect') {
       // 2. receive and parse connect response
       const connResp = parseConnResp(response);
-      console.log("connResp "+connResp)
+      console.log("connResp has come ")
       // 3. send announce request
       const announceReq = buildAnnounceReq(connResp.connectionId, torrent);
       udpSend(socket, announceReq, url);
     } else if (respType(response) === 'announce') {
       // 4. parse announce response
       const announceResp = parseAnnounceResp(response);
-      console.log("announceResp "+announceResp)
+      console.log("announceResp seeders  "+announceResp.seeders)
+      console.log("announceResp leechers "+announceResp.leechers)
       // 5. pass peers to callback
       callback(announceResp.peers);
     }
